@@ -1,0 +1,455 @@
+[
+  {
+    "_id": "BankIT-Operations-Excellence",
+    "_type": "dashboard",
+    "_source": {
+      "title": "BankIT Operations Excellence",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"col\":1,\"id\":\"BankIT-Business-Performance\",\"panelIndex\":1,\"row\":1,\"size_x\":4,\"size_y\":3,\"type\":\"visualization\"},{\"col\":5,\"id\":\"BankIT-Hourly-Trend-Analysis-Functionality\",\"panelIndex\":2,\"row\":1,\"size_x\":4,\"size_y\":3,\"type\":\"visualization\"},{\"col\":1,\"id\":\"BankIT-Application-Messages-over-Time\",\"panelIndex\":5,\"row\":4,\"size_x\":4,\"size_y\":2,\"type\":\"visualization\"},{\"col\":9,\"id\":\"BankIT-Functional-Messages\",\"panelIndex\":6,\"row\":1,\"size_x\":4,\"size_y\":2,\"type\":\"visualization\"},{\"id\":\"BankIT-Data-Mask-Status\",\"type\":\"visualization\",\"panelIndex\":7,\"size_x\":4,\"size_y\":2,\"col\":5,\"row\":4},{\"id\":\"BankIT-Technical-Messages\",\"type\":\"visualization\",\"panelIndex\":8,\"size_x\":4,\"size_y\":2,\"col\":9,\"row\":3},{\"id\":\"BankIT-Total-Exceptions\",\"type\":\"visualization\",\"panelIndex\":9,\"size_x\":3,\"size_y\":3,\"col\":1,\"row\":6},{\"id\":\"BankIT-Catalina-Messages-over-Time\",\"type\":\"visualization\",\"panelIndex\":10,\"size_x\":5,\"size_y\":3,\"col\":4,\"row\":6},{\"id\":\"BankIT-Hourly-Trend-Analysis-Middleware\",\"type\":\"visualization\",\"panelIndex\":11,\"size_x\":4,\"size_y\":4,\"col\":9,\"row\":5}]",
+      "optionsJSON": "{\"darkTheme\":false}",
+      "uiStateJSON": "{\"P-1\":{\"vis\":{\"legendOpen\":false}},\"P-5\":{\"vis\":{\"legendOpen\":false}},\"P-6\":{\"vis\":{\"legendOpen\":false}},\"P-11\":{\"spy\":{\"mode\":{\"name\":null,\"fill\":false}}},\"P-8\":{\"vis\":{\"legendOpen\":false}}}",
+      "version": 1,
+      "timeRestore": true,
+      "timeTo": "now",
+      "timeFrom": "now-15m",
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[{\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}}}]}"
+      }
+    }
+  },
+  {
+    "_id": "BankIT-Functional-Messages",
+    "_type": "search",
+    "_source": {
+      "title": "BankIT Functional Messages",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "_source"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"logstash-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"query_string\":{\"query\":\"type:application AND log_component:bankit AND appl_context:Functional\",\"analyze_wildcard\":true}}}"
+      }
+    }
+  },
+  {
+    "_id": "BankIT-Application-Errors",
+    "_type": "search",
+    "_source": {
+      "title": "BankIT Application Errors",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "_source"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"logstash-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"query_string\":{\"query\":\"type:application AND log_component:bankit AND *rror\",\"analyze_wildcard\":true}}}"
+      }
+    }
+  },
+  {
+    "_id": "BankIT-Application-All",
+    "_type": "search",
+    "_source": {
+      "title": "BankIT Application All",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "_source"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"logstash-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"query_string\":{\"query\":\"type:application AND log_component:bankit\",\"analyze_wildcard\":true}}}"
+      }
+    }
+  },
+  {
+    "_id": "BankIT-Grok-Parser-Failed",
+    "_type": "search",
+    "_source": {
+      "title": "BankIT Grok Parser Failed",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "_source"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"logstash-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"query_string\":{\"query\":\"type:application AND log_component:bankit AND _grokparsefailure\",\"analyze_wildcard\":true}}}"
+      }
+    }
+  },
+  {
+    "_id": "BankIT-Technical-Messages",
+    "_type": "search",
+    "_source": {
+      "title": "BankIT Technical Messages",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "_source"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"logstash-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"query_string\":{\"query\":\"type:application AND log_component:bankit AND appl_context:Technical\",\"analyze_wildcard\":true}}}"
+      }
+    }
+  },
+  {
+    "_id": "BankIT-Catalina-Warnings",
+    "_type": "search",
+    "_source": {
+      "title": "BankIT Catalina Warnings",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "_source"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"logstash-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"query_string\":{\"query\":\"type:catalina AND log_component:bankit AND *arning\",\"analyze_wildcard\":true}}}"
+      }
+    }
+  },
+  {
+    "_id": "BankIT-Catalina-Events",
+    "_type": "search",
+    "_source": {
+      "title": "BankIT Catalina Events",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "_source"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"logstash-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"query_string\":{\"query\":\"type:catalina AND log_component:bankit\",\"analyze_wildcard\":true}}}"
+      }
+    }
+  },
+  {
+    "_id": "BankIT-All",
+    "_type": "search",
+    "_source": {
+      "title": "BankIT All",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "_source"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"logstash-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"query_string\":{\"query\":\"log_component:bankit\",\"analyze_wildcard\":true}}}"
+      }
+    }
+  },
+  {
+    "_id": "BankIT-Messages",
+    "_type": "search",
+    "_source": {
+      "title": "BankIT Messages",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "appl_context",
+        "appl_class",
+        "appl_loglevel",
+        "appl_module",
+        "appl_message",
+        "type"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"logstash-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"query_string\":{\"query\":\"log_component:bankit AND ( type:catalina OR type:application )\",\"analyze_wildcard\":true}}}"
+      }
+    }
+  },
+  {
+    "_id": "Claims-Performance",
+    "_type": "search",
+    "_source": {
+      "title": "BankIT Claims Performance",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "_source"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"logstash-*\",\n  \"query\": {\n    \"query_string\": {\n      \"query\": \"type:performance AND log_component:bankit AND appl_module:claims\",\n      \"analyze_wildcard\": true\n    }\n  },\n  \"filter\": [],\n  \"highlight\": {\n    \"pre_tags\": [\n      \"@kibana-highlighted-field@\"\n    ],\n    \"post_tags\": [\n      \"@/kibana-highlighted-field@\"\n    ],\n    \"fields\": {\n      \"*\": {}\n    },\n    \"require_field_match\": false,\n    \"fragment_size\": 2147483647\n  }\n}"
+      }
+    }
+  },
+  {
+    "_id": "BankIT-Catalina-Exceptions",
+    "_type": "search",
+    "_source": {
+      "title": "BankIT Catalina Exceptions",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "_source"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"logstash-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"query_string\":{\"query\":\"type:catalina AND log_component:bankit AND Exception\",\"analyze_wildcard\":true}}}"
+      }
+    }
+  },
+  {
+    "_id": "BankIT-Application-Warnings",
+    "_type": "search",
+    "_source": {
+      "title": "BankIT Application Warnings",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "_source"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"logstash-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"query_string\":{\"query\":\"type:application AND log_component:bankit AND warning\",\"analyze_wildcard\":true}}}"
+      }
+    }
+  },
+  {
+    "_id": "BankIT-Application-Severe",
+    "_type": "search",
+    "_source": {
+      "title": "BankIT Application Severe",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "_source"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"logstash-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"query_string\":{\"query\":\"type:application AND log_component:bankit AND severe\",\"analyze_wildcard\":true}}}"
+      }
+    }
+  },
+  {
+    "_id": "BankIT-Catalina-Errors",
+    "_type": "search",
+    "_source": {
+      "title": "BankIT Catalina Errors",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "_source"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"logstash-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"query_string\":{\"query\":\"type:catalina AND log_component:bankit AND error\",\"analyze_wildcard\":true}}}"
+      }
+    }
+  },
+  {
+    "_id": "Visualization-Exercise",
+    "_type": "visualization",
+    "_source": {
+      "title": "Visualization Exercise",
+      "visState": "{\"title\":\"New Visualization\",\"type\":\"area\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"smoothLines\":false,\"scale\":\"linear\",\"interpolate\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"3\",\"type\":\"filters\",\"schema\":\"segment\",\"params\":{\"filters\":[{\"input\":{\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}}},\"label\":\"BankIT All\"},{\"input\":{\"query\":{\"query_string\":{\"query\":\"type:application\",\"analyze_wildcard\":true}}},\"label\":\"BankIT application\"},{\"input\":{\"query\":{\"query_string\":{\"query\":\"type:performance\",\"analyze_wildcard\":true}}},\"label\":\"BankIT claims\"},{\"input\":{\"query\":{\"query_string\":{\"query\":\"type:catalina\",\"analyze_wildcard\":true}}},\"label\":\"BankIT Catalina\"}]}},{\"id\":\"4\",\"type\":\"date_histogram\",\"schema\":\"group\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"d\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[],\"index\":\"logstash-*\",\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"query_string\":{\"query\":\"log_component:bankit\",\"analyze_wildcard\":true}}}"
+      }
+    }
+  },
+  {
+    "_id": "BankIT-Functional-Messages",
+    "_type": "visualization",
+    "_source": {
+      "title": "BankIT Functional Messages",
+      "visState": "{\"title\":\"Functional Messages\",\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"isDonut\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"appl_loglevel\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"_term\"}},{\"id\":\"3\",\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"appl_class\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "savedSearchId": "BankIT-Functional-Messages",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "BankIT-Catalina-Messages-over-Time",
+    "_type": "visualization",
+    "_source": {
+      "title": "BankIT Catalina Messages over Time",
+      "visState": "{\"title\":\"New Visualization\",\"type\":\"area\",\"params\":{\"shareYAxis\":true,\"addTooltip\":false,\"addLegend\":true,\"smoothLines\":true,\"scale\":\"linear\",\"interpolate\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"4\",\"type\":\"filters\",\"schema\":\"group\",\"params\":{\"filters\":[{\"input\":{\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}}},\"label\":\"Catalina Events\"},{\"input\":{\"query\":{\"query_string\":{\"query\":\"error\",\"analyze_wildcard\":true}}},\"label\":\"Catalina Errors\"},{\"input\":{\"query\":{\"query_string\":{\"query\":\"exception\",\"analyze_wildcard\":true}}},\"label\":\"Catalina Exceptions\"}]}}],\"listeners\":{}}",
+      "uiStateJSON": "{\"vis\":{\"colors\":{\"Catalina Events\":\"#511749\",\"Catalina Errors\":\"#E24D42\",\"Catalina Exceptions\":\"#99440A\"}}}",
+      "description": "",
+      "savedSearchId": "BankIT-Catalina-Events",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "BankIT-Application-Messages-over-Time",
+    "_type": "visualization",
+    "_source": {
+      "title": "BankIT Application Messages over Time",
+      "visState": "{\"title\":\"New Visualization\",\"type\":\"line\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"showCircles\":true,\"smoothLines\":true,\"interpolate\":\"linear\",\"scale\":\"linear\",\"drawLinesBetweenPoints\":true,\"radiusRatio\":9,\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"h\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"3\",\"type\":\"filters\",\"schema\":\"group\",\"params\":{\"filters\":[{\"input\":{\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}}},\"label\":\"Application messages\"},{\"input\":{\"query\":{\"query_string\":{\"query\":\"severe\",\"analyze_wildcard\":true}}},\"label\":\"Application Severe\"},{\"input\":{\"query\":{\"query_string\":{\"query\":\"warning\",\"analyze_wildcard\":true}}},\"label\":\"Application Warning\"}]}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "savedSearchId": "BankIT-Application-All",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "BankIT-Technical-Messages",
+    "_type": "visualization",
+    "_source": {
+      "title": "BankIT Technical Messages",
+      "visState": "{\"title\":\"Technical Messages\",\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"isDonut\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"appl_loglevel\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"_term\"}},{\"id\":\"3\",\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"appl_class\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "savedSearchId": "BankIT-Technical-Messages",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[{\"meta\":{\"index\":\"logstash-*\",\"key\":\"appl_loglevel\",\"value\":\"info\",\"disabled\":false,\"negate\":false,\"alias\":null},\"query\":{\"match\":{\"appl_loglevel\":{\"query\":\"info\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}}]}"
+      }
+    }
+  },
+  {
+    "_id": "BankIT-Business-Performance",
+    "_type": "visualization",
+    "_source": {
+      "title": "BankIT Business Performance",
+      "visState": "{\"title\":\"Business Performance\",\"type\":\"histogram\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"scale\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"performance_value\"}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "savedSearchId": "Claims-Performance",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "BankIT-Data-Mask-Status",
+    "_type": "visualization",
+    "_source": {
+      "title": "BankIT Data Mask Status",
+      "visState": "{\"title\":\"Data Mask Status\",\"type\":\"histogram\",\"params\":{\"shareYAxis\":true,\"addTooltip\":false,\"addLegend\":true,\"scale\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":true,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"m\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "savedSearchId": "BankIT-Grok-Parser-Failed",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "BankIT-Total-Exceptions",
+    "_type": "visualization",
+    "_source": {
+      "title": "BankIT Total Exceptions",
+      "visState": "{\"title\":\"BankIT Total Exceptions\",\"type\":\"metric\",\"params\":{\"fontSize\":60},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "savedSearchId": "BankIT-Catalina-Exceptions",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "BankIT-Hourly-Trend-Analysis-Functionality",
+    "_type": "visualization",
+    "_source": {
+      "title": "BankIT Hourly Trend Analysis - Functionality",
+      "visState": "{\"title\":\"BankIT Functionality - Hourly Trend Analysis\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"date_range\",\"schema\":\"bucket\",\"params\":{\"field\":\"@timestamp\",\"ranges\":[{\"from\":\"now-1h\",\"to\":\"now\"},{\"from\":\"now-25h\",\"to\":\"now-24h\"}]}},{\"id\":\"3\",\"type\":\"filters\",\"schema\":\"bucket\",\"params\":{\"filters\":[{\"input\":{\"query\":{\"query_string\":{\"query\":\"type=application AND appl_context=Functional\",\"analyze_wildcard\":true}}},\"label\":\"Functional Messages\"},{\"input\":{\"query\":{\"query_string\":{\"query\":\"type=performance\",\"analyze_wildcard\":true}}},\"label\":\"Claims Performance\"}]}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "savedSearchId": "BankIT-All",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "BankIT-Hourly-Trend-Analysis-Middleware",
+    "_type": "visualization",
+    "_source": {
+      "title": "BankIT Hourly Trend Analysis - Middleware",
+      "visState": "{\"title\":\"BankIT Hourly Trend Analysis - Middleware\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"date_range\",\"schema\":\"bucket\",\"params\":{\"field\":\"@timestamp\",\"ranges\":[{\"from\":\"now-1h\",\"to\":\"now\"},{\"from\":\"now-25h\",\"to\":\"now-24h\"}]}},{\"id\":\"3\",\"type\":\"filters\",\"schema\":\"bucket\",\"params\":{\"filters\":[{\"input\":{\"query\":{\"query_string\":{\"query\":\"exception\",\"analyze_wildcard\":true}}},\"label\":\"Catalina Exceptions\"},{\"input\":{\"query\":{\"query_string\":{\"query\":\"warning\",\"analyze_wildcard\":true}}},\"label\":\"Catalina Warnings\"},{\"input\":{\"query\":{\"query_string\":{\"query\":\"severe\",\"analyze_wildcard\":true}}},\"label\":\"Catalina Severe\"}]}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "savedSearchId": "BankIT-Catalina-Events",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[]}"
+      }
+    }
+  }
+]
